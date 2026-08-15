@@ -1,0 +1,18 @@
+Runtime date conflict
+=====================
+
+Several historical sources give different dates for this exact release.
+Test these dates manually and keep the one that actually works:
+
+- 2003-10-29
+- 2003-10-30
+
+Historical sources:
+- 2003-10-29 — historical site comment
+- 2003-10-30 — pcbanan Graviation FULL/GRAVIATION.TXT
+
+Embedded Mophun metadata (secondary reference only):
+- M001: 2003-10-30
+- M002: 2003-10-31
+
+After testing, this file can be replaced by the confirmed run date in the folder name.
