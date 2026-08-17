@@ -8,16 +8,16 @@ The library is intended for compatibility testing, preservation research, and us
 
 Current canonical set:
 
-* **435 unique Mophun releases**
-* **136** T3xx
-* **126** T6xx
-* **86** T3xx + T6xx compatible
-* **24** UIQ3
-* **63** currently unclassified
+* **411 unique Mophun releases**
+* **170** T3xx
+* **145** T6xx
+* **69** T3xx + T6xx compatible
+* **27** UIQ3
+* **0** currently unclassified
 
 SDK samples under `SDK/` are kept in the repository but are not part of the canonical release set.
 
-Profile counts reflect confirmed runtime evidence from the STM32 compatibility sweep: T3xx vs T6xx mismatches were reclassified; uncertain titles remain in `Unknown`.
+Profile counts follow the current folder layout. Remaining `Unknown` titles were classified into T3xx, T6xx, T3xx+T6xx, or UIQ3; titles removed from the tree are no longer in the canonical set.
 
 Exact binary duplicates, broken archive artifacts, incomplete multipart files, and non-Mophun files have been removed.
 
@@ -45,9 +45,9 @@ Mophun releases targeting Symbian UIQ 3 devices.
 
 ### `Unknown`
 
-Valid Mophun releases for which the target profile has not yet been identified with sufficient confidence.
+Reserved for valid Mophun releases whose target profile is not yet identified with sufficient confidence.
 
-Files are kept here rather than being classified heuristically.
+The current canonical set has classified every remaining title, so this folder is empty.
 
 ## Release naming
 
@@ -69,7 +69,7 @@ Rules:
 * Version numbers are shown only when needed to distinguish multiple releases.
 * Short release identifiers are used only when otherwise indistinguishable binaries exist.
 * Dates embedded directly in Mophun metadata are not included in filenames.
-* Historical runtime dates that cannot be recovered from the game binary may remain as `[run YYYY-MM-DD]`.
+* Historical runtime dates that cannot be recovered from the game binary live in the parent folder name (`run YYYY-MM-DD` or `date YYYY-MM-DD..YYYY-MM-DD`), not in the `.mpn` filename.
 
 ## External resources
 
@@ -94,8 +94,11 @@ Important files include:
 
 ```text
 library_manifest.csv
+date_rules.csv
 runtime_date_overrides.csv
 canonical_runtime_sha256.txt
+canonical_mpc_sha256_multiset.txt
+canonical_language_sha256_multiset.txt
 CANONICAL_FINGERPRINT.txt
 ```
 
@@ -112,10 +115,12 @@ python tools/verify_library.py .
 Expected result:
 
 ```text
-MPN: 435 / unique 435
-Profiles: T3xx=136, T6xx=126, T3xx+T6xx=86, UIQ3=24, Unknown=63
+MPN: 411 / unique 411
+Profiles: T3xx=170, T6xx=145, T3xx+T6xx=69, UIQ3=27, Unknown=0
 MPC placements: 20
-language sidecars: 8
+language sidecars: 6
+date rules: 94
+dates.txt: 4
 
 LIBRARY STATUS: CANONICAL-COMPLETE
 ```
@@ -136,7 +141,7 @@ Profile changes should only be made when supported by reliable evidence such as:
 * matching releases from known device-specific distributions;
 * confirmed runtime behavior.
 
-Uncertain releases should remain in `Unknown`.
+Uncertain new releases should go in `Unknown` until classified.
 
 ## Rights
 
