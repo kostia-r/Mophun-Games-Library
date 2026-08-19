@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse, hashlib, collections, csv
 
-EXPECTED_COUNTS = {"T3xx":170,"T6xx":145,"T3xx+T6xx":69,"UIQ3":27,"Unknown":0}
+EXPECTED_COUNTS = {"T3xx":171,"T6xx":146,"T3xx+T6xx":67,"UIQ3":27,"Unknown":0}
 EXPECTED_UNIQUE = sum(EXPECTED_COUNTS.values())
 PROFILES = tuple(EXPECTED_COUNTS)
 MPN_NAME_RULES = {

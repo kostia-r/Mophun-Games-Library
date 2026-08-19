@@ -9,9 +9,9 @@ The library is intended for compatibility testing, preservation research, and us
 Current canonical set:
 
 * **411 unique Mophun releases**
-* **170** T3xx
-* **145** T6xx
-* **69** T3xx + T6xx compatible
+* **171** T3xx
+* **146** T6xx
+* **67** T3xx + T6xx compatible
 * **27** UIQ3
 * **0** currently unclassified
 
@@ -116,7 +116,7 @@ Expected result:
 
 ```text
 MPN: 411 / unique 411
-Profiles: T3xx=170, T6xx=145, T3xx+T6xx=69, UIQ3=27, Unknown=0
+Profiles: T3xx=171, T6xx=146, T3xx+T6xx=67, UIQ3=27, Unknown=0
 MPC placements: 20
 language sidecars: 6
 date rules: 94
